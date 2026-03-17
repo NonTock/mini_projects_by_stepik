@@ -40,6 +40,7 @@ while choose != "да":
     if choose == "нет":
         print(system_msg+"Очень жаль, надеемся что ещё поиграем!")
         sleep(2)
+        input(system_msg + "Нажмите Enter чтобы выйти")
         break
     choose = input(system_msg+"Если передумаете вы всегда можете написать 'да'")
 else:
@@ -50,5 +51,6 @@ else:
         if tryin == "хватит":
             print(system_msg + "Очень жаль, надеемся что ещё поиграем!")
             sleep(2)
+            input(system_msg+"Нажмите Enter чтобы выйти")
             break
         find_game(tryin)
