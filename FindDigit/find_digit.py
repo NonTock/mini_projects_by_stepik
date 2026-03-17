@@ -23,7 +23,7 @@ def find_game(num):
             num = input(system_msg + "Давайте ещё число:")
         elif num < random_number:
             counter += 1
-            print(system_msg+f"Ваше число: {num} меньше загаданного, давайте ещё:")
+            print(system_msg+f"Ваше число: {num} меньше загаданного")
             sleep(0.5)
             num = input(system_msg+"Давайте ещё число:")
         num = correct_digit(num)
@@ -32,6 +32,7 @@ def find_game(num):
         print(win_msg+"В точку, поздравляем!")
         print(win_msg+f"Ваше количество попыток: {counter}")
 system_msg = Style.BRIGHT+Fore.LIGHTBLUE_EX
+system_exit = Style.BRIGHT+Fore.LIGHTRED_EX
 win_msg = Style.BRIGHT+Fore.LIGHTGREEN_EX
 print(system_msg+'Добро пожаловать в "Угадай Число" by NonTock')
 sleep(1)
@@ -40,7 +41,7 @@ while choose != "да":
     if choose == "нет":
         print(system_msg+"Очень жаль, надеемся что ещё поиграем!")
         sleep(2)
-        input(system_msg + "Нажмите Enter чтобы выйти")
+        input(system_exit + "Нажмите Enter чтобы выйти")
         break
     choose = input(system_msg+"Если передумаете вы всегда можете написать 'да'")
 else:
@@ -51,6 +52,6 @@ else:
         if tryin == "хватит":
             print(system_msg + "Очень жаль, надеемся что ещё поиграем!")
             sleep(2)
-            input(system_msg+"Нажмите Enter чтобы выйти")
+            input(system_exit + "Нажмите Enter чтобы выйти")
             break
         find_game(tryin)
