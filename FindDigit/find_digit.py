@@ -1,8 +1,15 @@
 import random
 from time import sleep
 from colorama import Fore, Style, init
+
 init(autoreset=True)
 
+system_msg = Style.BRIGHT+Fore.LIGHTBLUE_EX           #Палитра сообщений
+system_exit = Style.BRIGHT+Fore.LIGHTRED_EX
+win_msg = Style.BRIGHT+Fore.LIGHTGREEN_EX
+
+def exit_game():
+    print(system_msg + "Очень жаль, надеемся что ещё поиграем!")
 def correct_digit(num):                               #Проверка на правильность введенного значения
     while True:
         if num.isdigit():
@@ -31,15 +38,13 @@ def find_game(num):
         counter += 1
         print(win_msg+"В точку, поздравляем!")
         print(win_msg+f"Ваше количество попыток: {counter}")
-system_msg = Style.BRIGHT+Fore.LIGHTBLUE_EX
-system_exit = Style.BRIGHT+Fore.LIGHTRED_EX
-win_msg = Style.BRIGHT+Fore.LIGHTGREEN_EX
+
 print(system_msg+'Добро пожаловать в "Угадай Число" by NonTock')
 sleep(1)
 choose = input(system_msg+"Хотите ли сыграть 'Да'/'Нет':").lower()
 while choose != "да":
     if choose == "нет":
-        print(system_msg+"Очень жаль, надеемся что ещё поиграем!")
+        exit_game()
         sleep(2)
         input(system_exit + "Нажмите Enter чтобы выйти")
         break
@@ -50,7 +55,7 @@ else:
     while True:                                                                    #Бесконечный цикл после окончания раунда игры, с последующим запуском новой
         tryin = input(system_msg+"Если хотите сыграть ещё, введите новое число или напишите 'Хватит':").lower()
         if tryin == "хватит":
-            print(system_msg + "Очень жаль, надеемся что ещё поиграем!")
+            exit_game()
             sleep(2)
             input(system_exit + "Нажмите Enter чтобы выйти")
             break
