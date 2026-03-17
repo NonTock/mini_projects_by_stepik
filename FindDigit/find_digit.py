@@ -19,6 +19,7 @@ def find_game(num):
         if num > random_number:
             counter += 1
             print(system_msg+f"Ваше число: {num} больше загаданного")
+            sleep(0.5)
             num = input(system_msg + "Давайте ещё число:")
         elif num < random_number:
             counter += 1
