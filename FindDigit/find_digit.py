@@ -39,7 +39,7 @@ choose = input(system_msg+"Хотите ли сыграть 'Да'/'Нет':").l
 while choose != "да":
     if choose == "нет":
         print(system_msg+"Очень жаль, надеемся что ещё поиграем!")
-        time(2)
+        sleep(2)
         break
     choose = input(system_msg+"Если передумаете вы всегда можете написать 'да'")
 else:
@@ -49,6 +49,6 @@ else:
         tryin = input(system_msg+"Если хотите сыграть ещё, введите новое число или напишите 'Хватит':").lower()
         if tryin == "хватит":
             print(system_msg + "Очень жаль, надеемся что ещё поиграем!")
-            time(2)
+            sleep(2)
             break
         find_game(tryin)
